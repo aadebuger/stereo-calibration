@@ -5,7 +5,8 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 find_package(OpenCV REQUIRED)
 include_directories($(OpenCV_INCLUDE_DIRS))
-
+include_directories(/usr/local/Cellar/popt/1.16/include/)
+link_directories(/usr/local/Cellar/popt/1.16/lib/)
 add_executable(calibrate calib_intrinsic.cpp popt_pp.h)
 target_link_libraries(calibrate ${OpenCV_LIBS} "-lpopt")
 
